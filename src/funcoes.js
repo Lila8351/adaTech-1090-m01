@@ -1,4 +1,10 @@
 // incluir()
+export function incluir(tarefas){
+  let novaTarefa = prompt("Digite a nova tarefa ".green);
+  tarefas.push(novaTarefa);
+  console.log("Tarefa '" + novaTarefa + "' alterada com sucesso!");
+}
+
 // exibir
 // buscar
 // alterar
