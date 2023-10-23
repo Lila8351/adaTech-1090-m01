@@ -1,6 +1,6 @@
 // incluir()
 export function incluir(tarefas){
-  let novaTarefa = prompt("Digite a nova tarefa ".green);
+  let novaTarefa = prompt("Digite a nova tarefa ");
   tarefas.push(novaTarefa);
   console.log("Tarefa '" + novaTarefa + "' alterada com sucesso!");
 }
