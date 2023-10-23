@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 // incluir()
 export function incluir(tarefas){
   let novaTarefa = prompt("Digite a nova tarefa ");
@@ -62,4 +64,26 @@ readlinelnterface.question("Digite a palavra aqui: ", (palavraChave) => {
 
 function selecionar(){
     
+}
+
+export function salvaLista(tarefas){
+  if (tarefas.length !== 0) {
+    const conteudoArquivo = tarefas.join("\n");
+    fs.writeFile("dados.txt", conteudoArquivo, (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+    });
+  }
+}
+
+export function carregaLista() {
+  try {
+    const data = fs.readFileSync("dados.txt", 'utf8');
+    const linhas = data.split('\n');
+    return linhas;
+  } catch (err) {
+    return [];
+  }
 }
